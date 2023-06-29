@@ -1,0 +1,31 @@
+<SQL(Structed Query Language) 자료형>
+number		정수 혹은 실수
+char		고정 길이 문자열
+varchar2	가변 길이 문자열	
+date		날짜 
+blob		binary large object   -> 진짜 잘 안쓰지만 파일 자체를 DB에 저장할 때 사용
+================================================================================
+
+<SQL 언어>
+DDL(Data Definition Language, 데이터 정의어)
+-> 데이터베이스 객체를 생성하거나, 수정하거나, 삭제할 때 사용한다
+-> 테이블, 계정, 시퀀스, 인덱스, 프로시저, 트리거 등등
+- create
+- alter
+- drop
+- truncate
+
+DML(Data Manipulation Language, 데이터 조작어)
+-> (주로) 테이블 내부에 데이터를 추가/읽기/수정/삭제 하는데 사용한다
+- select
+- update
+- delete
+- insert
+
+DCL(Data Control Language, 데이터 제어어)
+-> 권한의 부여 및 몰수(삭제)
+-> 데이터 상태의 저장 및 되돌리기 등을 수행한다
+- grant
+- revoke
+- commit
+- rollback

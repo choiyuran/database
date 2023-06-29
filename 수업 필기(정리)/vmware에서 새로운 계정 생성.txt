@@ -1,0 +1,45 @@
+가상 머신에서 실행
+========================================================================
+<관리자 계정으로 로그인>
+su - oracle
+. oraenv
+sqlplus / as sysdba
+show user(사용자 보기)
+<생성한 계정으로 로그인>
+sqlplus [계정이름]/[비밀번호]
+ 
+<계정 생성>
+create user test identified by pass; - 오류(만들려는 계정명 앞에 c##을 붙여줘야 함)
+create user c##test identified by password; - 제대로 만들어짐
+
+<권한 부여>
+grant connect, resource to c##test;
+exit(빠져나오기)
+
+<계정 생성 테스트>
+sqlplus c##test/password -> 접속이 성공되면
+show user
+select banner from v$version;
+exit
+
+<다시 관리자 계정으로 접속>
+sqlplus / as sysdba
+- 계정 삭제 drop user c##test;
+===================================================================================
+
+<계정 비밀번호 변경>
+create user c##zzanggu identified by buriburi;(만든 후)
+alter user c##zzanggu identified by actionmask;(비밀번호 변경)
+grant connect, resource, dba to c##zzanggu;(권한 부여)
+
+<계정 검색>
+select username from all_users where username like 'C##%';
+-> c##itbank와 c##zzanggu 두개가 나옴
+
+<접속 계정 변경>
+conn c##zzanggu/actionmask;
+show user;
+
+<DB에 있는 테이블 불러오기>
+select * from "C##ITBANK"."PHONEBOOK";
+
