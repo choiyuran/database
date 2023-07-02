@@ -1,0 +1,4 @@
+<ojdbc8 라이브러리 참조하기>
+1. 해당 프로젝트 선택 후 우클릭 properties
+2. Java Build Path 
+3. libraries 탭에 들어가서 Add JARs에서 해당 프로젝트에 ojdbc8을 선택
